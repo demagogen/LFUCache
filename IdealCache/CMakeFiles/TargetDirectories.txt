@@ -1,0 +1,3 @@
+/home/roko/desktop/projects/LFUCache/IdealCache/CMakeFiles/IdealCache.dir
+/home/roko/desktop/projects/LFUCache/IdealCache/CMakeFiles/edit_cache.dir
+/home/roko/desktop/projects/LFUCache/IdealCache/CMakeFiles/rebuild_cache.dir
