@@ -10,12 +10,15 @@ int main()
 
     IdealCache Cache(cache_size, data_amount);
 
-    int element = 0;
-    for (size_t index = 0; index < data_amount; index++)
-    {
-        std::cin >> element;
-        Cache.push_back(element);
-    }
+    // int element = 0;
+    // for (size_t index = 0; index < data_amount; index++)
+    // {
+    //     std::cin >> element;
+    //     Cache.push_back(element);
+    // }
+
+    Cache.read_data();
+    // Cache.data_frequency_dump();
 
     size_t hits = Cache.optimal_page();
 

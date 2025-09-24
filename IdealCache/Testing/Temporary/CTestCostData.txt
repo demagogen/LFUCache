@@ -1,11 +1,15 @@
-test1 0 0
-test2 0 0
-test3 0 0
-test4 0 0
-test5 0 0
+test1 1 0.0149054
+test2 9 0.00139349
+test3 10 0.00122208
+test4 1 0.0131605
+test5 9 0.00179933
+test10 5 0
+test11 0 0
+test12 6 0.00203858
+test6 7 0.00199881
+test7 8 0.00171498
+test8 1 0.0156954
+test9 7 0.00220921
 ---
-test1
-test2
-test3
-test4
-test5
+test10
+test11

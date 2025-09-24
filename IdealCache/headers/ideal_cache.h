@@ -7,10 +7,11 @@
 class IdealCache
 {
     private:
-        size_t                          capacity;
-        size_t                          data_amount;
-        std::vector<int>                data;
-        std::unordered_map<size_t, int> Cache;
+        size_t                             capacity;
+        size_t                             data_amount;
+        std::vector<int>                   data;
+        std::unordered_map<size_t, size_t> DataFrequency;
+        std::unordered_map<size_t, int>    Cache;
 
     public:
         IdealCache(size_t capacity, size_t data_amount) :
@@ -42,6 +43,38 @@ class IdealCache
             }
 
             std::cout << std::endl;
+        }
+
+        void data_frequency_dump()
+        {
+            for (const auto& data_frequency_iterator : DataFrequency)
+            {
+                std::cout << data_frequency_iterator.first << " " << data_frequency_iterator.second << std::endl;
+            }
+
+            std::cout << std::endl;
+        }
+
+        void read_data()
+        {
+            int element = 0;
+
+            for (size_t index = 0; index < data_amount; index++)
+            {
+                std::cin >> element;
+                data.push_back(element);
+                auto data_frequency_iterator = DataFrequency.find(element);
+
+
+                if (data_frequency_iterator != DataFrequency.end())
+                {
+                    data_frequency_iterator->second++;
+                }
+                else
+                {
+                    DataFrequency.emplace(element, 1);
+                }
+            }
         }
 
         void push_back(int element)
@@ -96,6 +129,10 @@ class IdealCache
                     hits++;
                     continue;
                 }
+
+                // That is not Belady cache algo way, but I found it cool
+                auto data_frequency_iterator = DataFrequency.find(data[index]);
+                if (data_frequency_iterator->second == 1) continue;
 
                 if (capacity > Cache.size())
                 {
