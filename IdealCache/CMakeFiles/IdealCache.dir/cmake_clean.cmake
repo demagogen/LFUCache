@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/IdealCache.dir/link.d"
-  "CMakeFiles/IdealCache.dir/src/ideal_cache.cpp.o"
-  "CMakeFiles/IdealCache.dir/src/ideal_cache.cpp.o.d"
   "CMakeFiles/IdealCache.dir/src/main.cpp.o"
   "CMakeFiles/IdealCache.dir/src/main.cpp.o.d"
   "bin/IdealCache"

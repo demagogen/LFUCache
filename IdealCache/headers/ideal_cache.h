@@ -24,11 +24,21 @@ class IdealCache
 
         ~IdealCache() {}
 
-        void vector_dump(size_t capacity)
+        void vector_dump()
         {
-            for (size_t index = 0; index < capacity; index++)
+            for (size_t index = 0; index < data.size(); index++)
             {
                 std::cout << " " << data[index];
+            }
+
+            std::cout << std::endl;
+        }
+
+        void cache_dump()
+        {
+            for (const auto& cache_iterator : Cache)
+            {
+                std::cout << cache_iterator.first << " " << cache_iterator.second << std::endl;
             }
 
             std::cout << std::endl;
@@ -80,6 +90,7 @@ class IdealCache
 
             for (size_t index = 0; index < data_amount; index++)
             {
+                // cache_dump();
                 if (search(data[index]))
                 {
                     hits++;

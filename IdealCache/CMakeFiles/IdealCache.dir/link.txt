@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/IdealCache.dir/link.d CMakeFiles/IdealCache.dir/src/main.cpp.o CMakeFiles/IdealCache.dir/src/ideal_cache.cpp.o -o bin/IdealCache
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/IdealCache.dir/link.d CMakeFiles/IdealCache.dir/src/main.cpp.o -o bin/IdealCache

@@ -11,7 +11,6 @@ set(COMMON_SOURCES
 )
 
 add_executable(IdealCache
-    # src/main.cpp
     ${COMMON_SOURCES}
 )
 
@@ -28,3 +27,35 @@ endif()
 if(WIN32)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
+
+enable_testing()
+include(CTest)
+
+function(add_lfu_test test_name)
+    message(STATUS "Adding test: ${test_name}")
+    add_test(NAME ${test_name}
+        COMMAND ${CMAKE_COMMAND}
+            -DTEST_PROGRAM=$<TARGET_FILE:IdealCache>
+            -DTEST_INPUT=${CMAKE_CURRENT_SOURCE_DIR}/tests/${test_name}.dat
+            -DTEST_OUTPUT=${CMAKE_CURRENT_BINARY_DIR}/tests/${test_name}.out
+            -DTEST_EXPECTED=${CMAKE_CURRENT_SOURCE_DIR}/tests/${test_name}.ans
+            -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/RunTest.cmake
+    )
+
+    file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/tests)
+endfunction()
+
+file(GLOB test_files "tests/*.dat")
+message(STATUS "Found test files: ${test_files}")
+
+foreach(test_file ${test_files})
+    get_filename_component(test_name ${test_file} NAME_WE)
+    message(STATUS "Processing test: ${test_name} from file: ${test_file}")
+    add_lfu_test(${test_name})
+endforeach()
+
+add_custom_target(run_tests
+    COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
+    DEPENDS IdealCache
+    COMMENT "Running tests..."
+)

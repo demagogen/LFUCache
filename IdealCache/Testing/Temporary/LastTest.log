@@ -1,3 +1,88 @@
-Start testing: Sep 21 21:22 MSK
+Start testing: Sep 24 18:54 MSK
 ----------------------------------------------------------
-End testing: Sep 21 21:22 MSK
+1/5 Testing: test1
+1/5 Test: test1
+Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/IdealCache/bin/IdealCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test1.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test1.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test1.ans" "-P" "/home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake"
+Directory: /home/roko/desktop/projects/LFUCache/IdealCache
+"test1" start time: Sep 24 18:54 MSK
+Output:
+----------------------------------------------------------
+CMake Error: Not a file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+CMake Error: Error processing file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test1" end time: Sep 24 18:54 MSK
+"test1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: test2
+2/5 Test: test2
+Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/IdealCache/bin/IdealCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test2.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test2.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test2.ans" "-P" "/home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake"
+Directory: /home/roko/desktop/projects/LFUCache/IdealCache
+"test2" start time: Sep 24 18:54 MSK
+Output:
+----------------------------------------------------------
+CMake Error: Not a file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+CMake Error: Error processing file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test2" end time: Sep 24 18:54 MSK
+"test2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: test3
+3/5 Test: test3
+Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/IdealCache/bin/IdealCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test3.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test3.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test3.ans" "-P" "/home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake"
+Directory: /home/roko/desktop/projects/LFUCache/IdealCache
+"test3" start time: Sep 24 18:54 MSK
+Output:
+----------------------------------------------------------
+CMake Error: Not a file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+CMake Error: Error processing file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test3" end time: Sep 24 18:54 MSK
+"test3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: test4
+4/5 Test: test4
+Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/IdealCache/bin/IdealCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test4.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test4.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test4.ans" "-P" "/home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake"
+Directory: /home/roko/desktop/projects/LFUCache/IdealCache
+"test4" start time: Sep 24 18:54 MSK
+Output:
+----------------------------------------------------------
+CMake Error: Not a file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+CMake Error: Error processing file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test4" end time: Sep 24 18:54 MSK
+"test4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: test5
+5/5 Test: test5
+Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/IdealCache/bin/IdealCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test5.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test5.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/IdealCache/tests/test5.ans" "-P" "/home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake"
+Directory: /home/roko/desktop/projects/LFUCache/IdealCache
+"test5" start time: Sep 24 18:54 MSK
+Output:
+----------------------------------------------------------
+CMake Error: Not a file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+CMake Error: Error processing file: /home/roko/desktop/projects/LFUCache/IdealCache/cmake/RunTest.cmake
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test5" end time: Sep 24 18:54 MSK
+"test5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 24 18:54 MSK

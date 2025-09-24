@@ -54,7 +54,7 @@ class LFUCache
             }
 
             if (Cache.size() >= capacity)
-            {
+            {2
                 remove();
             }
 
