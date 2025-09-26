@@ -93,26 +93,34 @@ class IdealCache
         {
             size_t farthest_element_index = 0;
             size_t farthest_element_key   = 0;
+            bool   found_farthest         = false;
 
-            size_t index = 0;
             for (auto& cache_iterator : Cache)
             {
-                for (index = from; index < data_amount; index++)
+                bool found = false;
+                size_t next_occurrence = data_amount;
+
+                for (size_t index = from; index < data_amount; index++)
                 {
                     if (cache_iterator.second == data[index])
                     {
-                        if (index > farthest_element_index)
-                        {
-                            farthest_element_index = index;
-                            farthest_element_key   = cache_iterator.first;
-                        }
-
+                        next_occurrence = index;
+                        found = true;
                         break;
                     }
                 }
-            }
 
-            if (index == data_amount) return 0;
+                if (!found)
+                {
+                    return cache_iterator.first;
+                }
+                else if (next_occurrence > farthest_element_index || !found_farthest)
+                {
+                    farthest_element_index = next_occurrence;
+                    farthest_element_key   = cache_iterator.first;
+                    found_farthest         = true;
+                }
+            }
 
             return farthest_element_key;
         }
