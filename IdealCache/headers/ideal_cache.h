@@ -62,9 +62,8 @@ class IdealCache
             for (size_t index = 0; index < data_amount; index++)
             {
                 std::cin >> element;
-                data.push_back(element);
+                push_back(element);
                 auto data_frequency_iterator = DataFrequency.find(element);
-
 
                 if (data_frequency_iterator != DataFrequency.end())
                 {
@@ -97,7 +96,7 @@ class IdealCache
 
             for (auto& cache_iterator : Cache)
             {
-                bool found = false;
+                bool found             = false;
                 size_t next_occurrence = data_amount;
 
                 for (size_t index = from; index < data_amount; index++)
@@ -131,26 +130,27 @@ class IdealCache
 
             for (size_t index = 0; index < data_amount; index++)
             {
+                int data_element = data[index];
                 // cache_dump();
-                if (search(data[index]))
+                if (search(data_element))
                 {
                     hits++;
                     continue;
                 }
 
                 // That is not Belady cache algo way, but I found it cool
-                auto data_frequency_iterator = DataFrequency.find(data[index]);
+                auto data_frequency_iterator = DataFrequency.find(data_element);
                 if (data_frequency_iterator->second == 1) continue;
 
                 if (capacity > Cache.size())
                 {
-                    Cache.emplace(data[index], data[index]);
+                    Cache.emplace(data_element, data_element);
                 }
                 else
                 {
                     auto cache_key = predict(index + 1);
                     Cache.erase  (cache_key);
-                    Cache.emplace(data[index], data[index]);
+                    Cache.emplace(data_element, data_element);
                 }
             }
 

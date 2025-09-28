@@ -1,7 +1,3 @@
-// Thx Matvey787
-// https://www.geeksforgeeks.org/dsa/least-frequently-used-lfu-cache-implementation/
-// https://www.geeksforgeeks.org/dsa/optimal-page-replacement-algorithm/
-
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
