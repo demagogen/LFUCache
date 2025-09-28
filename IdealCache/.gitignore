@@ -1,3 +1,4 @@
 bin/
 .gitignore
-perf_data
+perf.data
+perf.data.old
