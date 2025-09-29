@@ -2,3 +2,4 @@ bin/
 .gitignore
 perf.data
 perf.data.old
+CMakeCache.txt
