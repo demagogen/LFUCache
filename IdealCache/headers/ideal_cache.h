@@ -25,7 +25,7 @@ class IdealCache
 
         ~IdealCache() {}
 
-        void vector_dump()
+        const void vector_dump()
         {
             for (size_t index = 0; index < data.size(); index++)
             {
@@ -35,7 +35,7 @@ class IdealCache
             std::cout << std::endl;
         }
 
-        void cache_dump()
+        const void cache_dump()
         {
             for (const auto& cache_iterator : Cache)
             {
@@ -45,7 +45,7 @@ class IdealCache
             std::cout << std::endl;
         }
 
-        void data_frequency_dump()
+        const void data_frequency_dump()
         {
             for (const auto& data_frequency_iterator : DataFrequency)
             {
