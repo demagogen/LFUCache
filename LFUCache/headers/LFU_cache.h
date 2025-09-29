@@ -11,14 +11,14 @@ class LFUCache
     private:
         struct Element
         {
-            int    value;
-            size_t frequency;
+            int                      value;
+            size_t                   frequency;
             std::list<int>::iterator iterator;
         };
 
-        size_t capacity;
-        size_t min_frequency;
-        std::unordered_map<size_t, Element> Cache;
+        size_t                                     capacity;
+        size_t                                     min_frequency;
+        std::unordered_map<size_t, Element>        Cache;
         std::unordered_map<size_t, std::list<int>> FrequencyMap;
 
     public:
@@ -35,20 +35,25 @@ class LFUCache
 
         int get(size_t key)
         {
-            if (Cache.find(key) == Cache.end())
+            auto iterator = Cache.find(key);
+
+            if (iterator == Cache.end())
             {
                 return -1;
             }
 
             update_frequency(key);
-            return Cache[key].value;
+
+            return iterator->second.value;
         }
 
         void put(size_t key, int value)
         {
-            if (Cache.find(key) != Cache.end())
+            auto iterator = Cache.find(key);
+
+            if (iterator != Cache.end())
             {
-                Cache[key].value = value;
+                // iterator->second.value = value;
                 update_frequency(key);
                 return;
             }
@@ -60,7 +65,7 @@ class LFUCache
 
             min_frequency = 1;
             FrequencyMap[1].push_front(key);
-            Cache[key] = {value, 1, FrequencyMap[1].begin()};
+            // Cache[key] = {value, 1, FrequencyMap[1].begin()};
             Cache.emplace(key, Element{value, 1, FrequencyMap[1].begin()});
         }
 

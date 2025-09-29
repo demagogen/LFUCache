@@ -1,10 +1,10 @@
-Start testing: Sep 24 19:44 MSK
+Start testing: Sep 29 11:05 MSK
 ----------------------------------------------------------
 1/5 Testing: test1
 1/5 Test: test1
 Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/LFUCache/bin/LFUCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test1.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test1.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test1.ans" "-P" "/home/roko/desktop/projects/LFUCache/LFUCache/cmake/RunTest.cmake"
 Directory: /home/roko/desktop/projects/LFUCache/LFUCache
-"test1" start time: Sep 24 19:44 MSK
+"test1" start time: Sep 29 11:05 MSK
 Output:
 ----------------------------------------------------------
 [0mTest passed: /home/roko/desktop/projects/LFUCache/LFUCache/tests/test1.dat[0m
@@ -12,7 +12,7 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test1" end time: Sep 24 19:44 MSK
+"test1" end time: Sep 29 11:05 MSK
 "test1" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -20,7 +20,7 @@ Test Passed.
 2/5 Test: test2
 Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/LFUCache/bin/LFUCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test2.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test2.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test2.ans" "-P" "/home/roko/desktop/projects/LFUCache/LFUCache/cmake/RunTest.cmake"
 Directory: /home/roko/desktop/projects/LFUCache/LFUCache
-"test2" start time: Sep 24 19:44 MSK
+"test2" start time: Sep 29 11:05 MSK
 Output:
 ----------------------------------------------------------
 [0mTest passed: /home/roko/desktop/projects/LFUCache/LFUCache/tests/test2.dat[0m
@@ -28,7 +28,7 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test2" end time: Sep 24 19:44 MSK
+"test2" end time: Sep 29 11:05 MSK
 "test2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -36,15 +36,15 @@ Test Passed.
 3/5 Test: test3
 Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/LFUCache/bin/LFUCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test3.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test3.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test3.ans" "-P" "/home/roko/desktop/projects/LFUCache/LFUCache/cmake/RunTest.cmake"
 Directory: /home/roko/desktop/projects/LFUCache/LFUCache
-"test3" start time: Sep 24 19:44 MSK
+"test3" start time: Sep 29 11:05 MSK
 Output:
 ----------------------------------------------------------
 [0mTest passed: /home/roko/desktop/projects/LFUCache/LFUCache/tests/test3.dat[0m
 <end of output>
-Test time =   0.01 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"test3" end time: Sep 24 19:44 MSK
+"test3" end time: Sep 29 11:05 MSK
 "test3" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -52,7 +52,7 @@ Test Passed.
 4/5 Test: test4
 Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/LFUCache/bin/LFUCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test4.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test4.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test4.ans" "-P" "/home/roko/desktop/projects/LFUCache/LFUCache/cmake/RunTest.cmake"
 Directory: /home/roko/desktop/projects/LFUCache/LFUCache
-"test4" start time: Sep 24 19:44 MSK
+"test4" start time: Sep 29 11:05 MSK
 Output:
 ----------------------------------------------------------
 [0mTest passed: /home/roko/desktop/projects/LFUCache/LFUCache/tests/test4.dat[0m
@@ -60,7 +60,7 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test4" end time: Sep 24 19:44 MSK
+"test4" end time: Sep 29 11:05 MSK
 "test4" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -68,7 +68,7 @@ Test Passed.
 5/5 Test: test5
 Command: "/usr/bin/cmake" "-DTEST_PROGRAM=/home/roko/desktop/projects/LFUCache/LFUCache/bin/LFUCache" "-DTEST_INPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test5.dat" "-DTEST_OUTPUT=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test5.out" "-DTEST_EXPECTED=/home/roko/desktop/projects/LFUCache/LFUCache/tests/test5.ans" "-P" "/home/roko/desktop/projects/LFUCache/LFUCache/cmake/RunTest.cmake"
 Directory: /home/roko/desktop/projects/LFUCache/LFUCache
-"test5" start time: Sep 24 19:44 MSK
+"test5" start time: Sep 29 11:05 MSK
 Output:
 ----------------------------------------------------------
 [0mTest passed: /home/roko/desktop/projects/LFUCache/LFUCache/tests/test5.dat[0m
@@ -76,8 +76,8 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test5" end time: Sep 24 19:44 MSK
+"test5" end time: Sep 29 11:05 MSK
 "test5" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 24 19:44 MSK
+End testing: Sep 29 11:05 MSK
