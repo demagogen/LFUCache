@@ -14,6 +14,7 @@ void check_input(std::string error_message)
     }
 }
 
+// /*
 int main(int argc, char* argv[]) {
     std::ifstream input_file;
     std::ofstream output_file;
@@ -49,23 +50,6 @@ int main(int argc, char* argv[]) {
 
     LFUCache<size_t, int> Cache(cache_capacity);
     size_t hits = Cache.driver(data_amount);
-    // size_t hits = 0;
-    // int    key  = 0;
-
-//     for (size_t index = 0; index < data_amount; index++)
-//     {
-//         std::cin >> key;
-//         check_input("Invalid element input");
-//
-//         if (Cache.get(key) != -1)
-//         {
-//             hits++;
-//         }
-//         else
-//         {
-//             Cache.put(key, key);
-//         }
-//     }
 
     std::cout << hits << std::endl;
 
@@ -83,6 +67,7 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+// */
 
 /*
 int main()
@@ -96,23 +81,7 @@ int main()
     check_input("Invalid data amount input");
 
     LFUCache<std::string, std::string> Cache(cache_capacity);
-    size_t hits = 0;
-
-    for (size_t index = 0; index < data_amount; index++)
-    {
-        std::string element = 0;
-        std::cin >> element;
-        check_input("Invalid element input");
-
-        if (Cache.get(element) != -1)
-        {
-            hits++;
-        }
-        else
-        {
-            Cache.put(element, element);
-        }
-    }
+    // size_t hits = Cache.driver(data_amount);
 
     std::cout << hits;
 }

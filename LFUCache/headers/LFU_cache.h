@@ -30,13 +30,37 @@ class LFUCache
             min_frequency      = 0;
         }
 
+        size_t driver(size_t data_amount)
+        {
+            data_t element = 0;
+            size_t hits    = 0;
+
+            for (size_t index = 0; index < data_amount; index++)
+            {
+                std::cin >> element;
+                check_input("Invalid element input");
+
+                if (get(element) != 0)
+                {
+                    hits++;
+                }
+                else
+                {
+                    put(element, element);
+                }
+            }
+
+            return hits;
+        }
+
+    private:
         data_t get(key_t key)
         {
             auto iterator = Cache.find(key);
 
             if (iterator == Cache.end())
             {
-                return -1;
+                return 0;
             }
 
             update_frequency(key);
@@ -64,30 +88,6 @@ class LFUCache
             Cache.emplace(key, Element{value, 1, FrequencyMap[min_frequency].begin()});
         }
 
-        size_t driver(size_t data_amount)
-        {
-            data_t element = 0;
-            size_t hits    = 0;
-
-            for (size_t index = 0; index < data_amount; index++)
-            {
-                std::cin >> element;
-                check_input("Invalid element input");
-
-                if (get(element) != -1)
-                {
-                    hits++;
-                }
-                else
-                {
-                    put(element, element);
-                }
-            }
-
-            return hits;
-        }
-
-    private:
         void update_frequency(key_t key)
         {
             auto iterator = Cache.find(key);
