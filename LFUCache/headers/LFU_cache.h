@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <iterator>
 #include <cstddef>
+#include "main.h"
 
 template<typename key_t, typename data_t>
 class LFUCache
@@ -61,6 +62,29 @@ class LFUCache
             min_frequency = 1;
             FrequencyMap[min_frequency].push_front(key);
             Cache.emplace(key, Element{value, 1, FrequencyMap[min_frequency].begin()});
+        }
+
+        size_t driver(size_t data_amount)
+        {
+            data_t element = 0;
+            size_t hits    = 0;
+
+            for (size_t index = 0; index < data_amount; index++)
+            {
+                std::cin >> element;
+                check_input("Invalid element input");
+
+                if (get(element) != -1)
+                {
+                    hits++;
+                }
+                else
+                {
+                    put(element, element);
+                }
+            }
+
+            return hits;
         }
 
     private:

@@ -155,4 +155,5 @@ CMakeFiles/LFUCache.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/allocated_ptr.h \
  /usr/include/c++/15.2.1/bits/list.tcc /usr/include/c++/15.2.1/iterator \
  /usr/include/c++/15.2.1/bits/stream_iterator.h \
- /usr/include/c++/15.2.1/cstddef
+ /usr/include/c++/15.2.1/cstddef \
+ /home/roko/desktop/projects/LFUCache/LFUCache/headers/main.h

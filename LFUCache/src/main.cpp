@@ -48,23 +48,24 @@ int main(int argc, char* argv[]) {
     check_input("Invalid data amount input");
 
     LFUCache<size_t, int> Cache(cache_capacity);
-    size_t hits = 0;
-    int key     = 0;
+    size_t hits = Cache.driver(data_amount);
+    // size_t hits = 0;
+    // int    key  = 0;
 
-    for (size_t index = 0; index < data_amount; index++)
-    {
-        std::cin >> key;
-        check_input("Invalid element input");
-
-        if (Cache.get(key) != -1)
-        {
-            hits++;
-        }
-        else
-        {
-            Cache.put(key, key);
-        }
-    }
+//     for (size_t index = 0; index < data_amount; index++)
+//     {
+//         std::cin >> key;
+//         check_input("Invalid element input");
+//
+//         if (Cache.get(key) != -1)
+//         {
+//             hits++;
+//         }
+//         else
+//         {
+//             Cache.put(key, key);
+//         }
+//     }
 
     std::cout << hits << std::endl;
 
@@ -82,3 +83,37 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+/*
+int main()
+{
+    size_t cache_capacity = 0;
+    size_t data_amount    = 0;
+
+    std::cin >> cache_capacity;
+    check_input("Invalid cache capacity input");
+    std::cin >> data_amount;
+    check_input("Invalid data amount input");
+
+    LFUCache<std::string, std::string> Cache(cache_capacity);
+    size_t hits = 0;
+
+    for (size_t index = 0; index < data_amount; index++)
+    {
+        std::string element = 0;
+        std::cin >> element;
+        check_input("Invalid element input");
+
+        if (Cache.get(element) != -1)
+        {
+            hits++;
+        }
+        else
+        {
+            Cache.put(element, element);
+        }
+    }
+
+    std::cout << hits;
+}
+*/
