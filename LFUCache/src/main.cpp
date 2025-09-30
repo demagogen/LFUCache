@@ -9,6 +9,9 @@ int main(int argc, char* argv[]) {
     std::streambuf* cin_buf = std::cin.rdbuf();
     std::streambuf* cout_buf = std::cout.rdbuf();
 
+    try
+    {
+
     if (argc > 1)
     {
         input_file.open(argv[1]);
@@ -28,13 +31,18 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    std::string input_string_with_cache_capacity;
+    std::string input_string_with_data_amount;
     size_t cache_capacity = 0;
     size_t data_amount    = 0;
 
-    std::cin >> cache_capacity;
-    std::cin >> data_amount;
+    std::cin >> input_string_with_cache_capacity;
+    std::cin >> input_string_with_data_amount;
 
-    LFUCache cache(cache_capacity);
+    cache_capacity = stoi(input_string_with_cache_capacity);
+    data_amount    = stoi(input_string_with_data_amount);
+
+    LFUCache<size_t, int> Cache(cache_capacity);
     size_t hits = 0;
     int key     = 0;
 
@@ -42,13 +50,13 @@ int main(int argc, char* argv[]) {
     {
         std::cin >> key;
 
-        if (cache.get(key) != -1)
+        if (Cache.get(key) != -1)
         {
             hits++;
         }
         else
         {
-            cache.put(key, key);
+            Cache.put(key, key);
         }
     }
 
@@ -64,6 +72,11 @@ int main(int argc, char* argv[]) {
     {
         output_file.close();
         std::cout.rdbuf(cout_buf);
+    }
+    }
+    catch(...)
+    {
+        throw;
     }
 
     return 0;

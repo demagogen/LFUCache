@@ -8,13 +8,17 @@ int main()
 
     std::cin >> cache_size >> data_amount;
 
-    IdealCache Cache(cache_size, data_amount);
-
-    Cache.read_data();
-
-    size_t hits = Cache.optimal_page();
-
-    std::cout << hits << std::endl;
+    // try
+    // {
+        IdealCache Cache(cache_size, data_amount);
+        Cache.read_data();
+        size_t hits = Cache.optimal_page();
+        std::cout << hits << std::endl;
+    // }
+    // catch(...)
+    // {
+        // std::cout << "Invalid input" << std::endl;
+    // }
 
     return 0;
 }

@@ -6,20 +6,21 @@
 #include <iterator>
 #include <cstddef>
 
+template<typename key_t, typename data_t>
 class LFUCache
 {
     private:
         struct Element
         {
-            int                      value;
+            data_t                   value;
             size_t                   frequency;
             std::list<int>::iterator iterator;
         };
 
-        size_t                                     capacity;
-        size_t                                     min_frequency;
-        std::unordered_map<size_t, Element>        Cache;
-        std::unordered_map<size_t, std::list<int>> FrequencyMap;
+        size_t                                        capacity;
+        size_t                                        min_frequency;
+        std::unordered_map<size_t, Element>           Cache;
+        std::unordered_map<size_t, std::list<data_t>> FrequencyMap;
 
     public:
         LFUCache(size_t capacity) : capacity(capacity)
@@ -33,7 +34,7 @@ class LFUCache
             min_frequency      = 0;
         }
 
-        int get(size_t key)
+        data_t get(key_t key)
         {
             auto iterator = Cache.find(key);
 
@@ -47,13 +48,12 @@ class LFUCache
             return iterator->second.value;
         }
 
-        void put(size_t key, int value)
+        void put(key_t key, data_t value)
         {
             auto iterator = Cache.find(key);
 
             if (iterator != Cache.end())
             {
-                // iterator->second.value = value;
                 update_frequency(key);
                 return;
             }
@@ -64,13 +64,12 @@ class LFUCache
             }
 
             min_frequency = 1;
-            FrequencyMap[1].push_front(key);
-            // Cache[key] = {value, 1, FrequencyMap[1].begin()};
-            Cache.emplace(key, Element{value, 1, FrequencyMap[1].begin()});
+            FrequencyMap[min_frequency].push_front(key);
+            Cache.emplace(key, Element{value, 1, FrequencyMap[min_frequency].begin()});
         }
 
     private:
-        void update_frequency(size_t key)
+        void update_frequency(key_t key)
         {
             auto iterator = Cache.find(key);
             if (iterator == Cache.end()) return;

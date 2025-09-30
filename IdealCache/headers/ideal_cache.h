@@ -18,6 +18,11 @@ class IdealCache
             capacity(capacity),
             data_amount(data_amount)
         {
+            // if (capacity == 0)
+            // {
+                // throw std::invalid_argument("Zero capacity error\n");
+            // }
+
             IdealCache::capacity    = capacity;
             IdealCache::data_amount = data_amount;
             data.reserve(data_amount);
