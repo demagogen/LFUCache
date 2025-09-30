@@ -40,7 +40,7 @@ class LFUCache
                 std::cin >> element;
                 check_input("Invalid element input");
 
-                if (get(element) != 0)
+                if (get(element))
                 {
                     hits++;
                 }
@@ -54,18 +54,18 @@ class LFUCache
         }
 
     private:
-        data_t get(key_t key)
+        bool get(key_t key)
         {
             auto iterator = Cache.find(key);
 
             if (iterator == Cache.end())
             {
-                return 0;
+                return false;
             }
 
             update_frequency(key);
 
-            return iterator->second.value;
+            return true;
         }
 
         void put(key_t key, data_t value)
