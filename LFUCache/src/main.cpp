@@ -1,16 +1,24 @@
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
+#include "main.h"
 #include "LFU_cache.h"
+
+void check_input(std::string error_message)
+{
+    if (std::cin.fail())
+    {
+        std::cin.clear();
+        std::cout << error_message << std::endl;
+        exit(0);
+    }
+}
 
 int main(int argc, char* argv[]) {
     std::ifstream input_file;
     std::ofstream output_file;
-    std::streambuf* cin_buf = std::cin.rdbuf();
+    std::streambuf* cin_buf  = std::cin.rdbuf();
     std::streambuf* cout_buf = std::cout.rdbuf();
-
-    try
-    {
 
     if (argc > 1)
     {
@@ -31,16 +39,13 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    std::string input_string_with_cache_capacity;
-    std::string input_string_with_data_amount;
     size_t cache_capacity = 0;
     size_t data_amount    = 0;
 
-    std::cin >> input_string_with_cache_capacity;
-    std::cin >> input_string_with_data_amount;
-
-    cache_capacity = stoi(input_string_with_cache_capacity);
-    data_amount    = stoi(input_string_with_data_amount);
+    std::cin >> cache_capacity;
+    check_input("Invalid cache capacity input");
+    std::cin >> data_amount;
+    check_input("Invalid data amount input");
 
     LFUCache<size_t, int> Cache(cache_capacity);
     size_t hits = 0;
@@ -49,6 +54,7 @@ int main(int argc, char* argv[]) {
     for (size_t index = 0; index < data_amount; index++)
     {
         std::cin >> key;
+        check_input("Invalid element input");
 
         if (Cache.get(key) != -1)
         {
@@ -72,11 +78,6 @@ int main(int argc, char* argv[]) {
     {
         output_file.close();
         std::cout.rdbuf(cout_buf);
-    }
-    }
-    catch(...)
-    {
-        throw;
     }
 
     return 0;

@@ -25,11 +25,6 @@ class LFUCache
     public:
         LFUCache(size_t capacity) : capacity(capacity)
         {
-            if (capacity == 0)
-            {
-                throw std::invalid_argument("Zero capacity error\n");
-            }
-
             LFUCache::capacity = capacity;
             min_frequency      = 0;
         }

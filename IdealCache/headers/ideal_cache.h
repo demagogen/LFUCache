@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <unordered_map>
+#include "main.h"
 
 class IdealCache
 {
@@ -18,11 +19,6 @@ class IdealCache
             capacity(capacity),
             data_amount(data_amount)
         {
-            // if (capacity == 0)
-            // {
-                // throw std::invalid_argument("Zero capacity error\n");
-            // }
-
             IdealCache::capacity    = capacity;
             IdealCache::data_amount = data_amount;
             data.reserve(data_amount);
@@ -67,6 +63,7 @@ class IdealCache
             for (size_t index = 0; index < data_amount; index++)
             {
                 std::cin >> element;
+                check_input("Invalid element input");
                 push_back(element);
                 auto data_frequency_iterator = DataFrequency.find(element);
 

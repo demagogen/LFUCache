@@ -149,6 +149,7 @@ CMakeFiles/LFUCache.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/15.2.1/bits/fstream.tcc \
+ /home/roko/desktop/projects/LFUCache/LFUCache/headers/main.h \
  /home/roko/desktop/projects/LFUCache/LFUCache/headers/LFU_cache.h \
  /usr/include/c++/15.2.1/list /usr/include/c++/15.2.1/bits/stl_list.h \
  /usr/include/c++/15.2.1/bits/allocated_ptr.h \

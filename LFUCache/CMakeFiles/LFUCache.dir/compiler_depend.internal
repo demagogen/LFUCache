@@ -4,6 +4,7 @@
 CMakeFiles/LFUCache.dir/src/main.cpp.o
  /home/roko/desktop/projects/LFUCache/LFUCache/src/main.cpp
  /home/roko/desktop/projects/LFUCache/LFUCache/headers/LFU_cache.h
+ /home/roko/desktop/projects/LFUCache/LFUCache/headers/main.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h

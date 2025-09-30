@@ -3,6 +3,7 @@
 
 CMakeFiles/LFUCache.dir/src/main.cpp.o: src/main.cpp \
   headers/LFU_cache.h \
+  headers/main.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -280,8 +281,6 @@ bin/LFUCache: /usr/lib/Scrt1.o \
 
 /usr/include/linux/errno.h:
 
-/usr/include/features-time64.h:
-
 /usr/include/endian.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
@@ -365,6 +364,10 @@ bin/LFUCache: /usr/lib/Scrt1.o \
 /usr/include/bits/types/clockid_t.h:
 
 /usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/features-time64.h:
+
+headers/main.h:
 
 /usr/include/c++/15.2.1/bits/basic_string.h:
 
@@ -466,25 +469,7 @@ bin/LFUCache: /usr/lib/Scrt1.o \
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/c++/15.2.1/streambuf:
-
-/usr/include/c++/15.2.1/bits/functexcept.h:
-
-/usr/include/c++/15.2.1/bits/list.tcc:
-
 headers/LFU_cache.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/c++/15.2.1/bits/hashtable.h:
-
-/usr/include/stdio.h:
-
-src/main.cpp:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
@@ -493,6 +478,14 @@ src/main.cpp:
 /usr/include/bits/time64.h:
 
 /usr/include/bits/byteswap.h:
+
+/usr/include/bits/floatn.h:
+
+/usr/include/c++/15.2.1/bits/hashtable.h:
+
+/usr/include/stdio.h:
+
+src/main.cpp:
 
 /usr/include/bits/struct_mutex.h:
 
@@ -533,6 +526,16 @@ src/main.cpp:
 /usr/include/gnu/stubs.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/15.2.1/streambuf:
+
+/usr/include/c++/15.2.1/bits/functexcept.h:
+
+/usr/include/c++/15.2.1/bits/list.tcc:
 
 /usr/include/bits/types/struct_sched_param.h:
 

@@ -150,4 +150,6 @@ CMakeFiles/IdealCache.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/uses_allocator.h \
  /usr/include/c++/15.2.1/ext/aligned_buffer.h \
  /usr/include/c++/15.2.1/bits/enable_special_members.h \
- /usr/include/c++/15.2.1/bits/erase_if.h
+ /usr/include/c++/15.2.1/bits/erase_if.h \
+ /home/roko/desktop/projects/LFUCache/IdealCache/headers/main.h \
+ /home/roko/desktop/projects/LFUCache/IdealCache/headers/main.h
