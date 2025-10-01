@@ -20,12 +20,13 @@ cmake --build . --target run_tests
 ## Efficiency
 UPD: количество попаданий IdealCache выросло с прошлой версии на 3 хита.
 
-## 📊 Сравнение алгоритмов кэширования
+| Алгоритм | Попадания | Промахи | Эффективность (Hit Ratio) |
 
-| Алгоритм 🧠 | Попадания ✅ | Промахи ❌ | Эффективность 📈 |
-|------------|-------------|-----------|-----------------|
-| **OPT**    | **749**     | **254**   | **74.9%**       |
-| **LFU**    | 507         | 493       | 50.7%           |
+|--------------------|-----------|---------|---------------------------|
+
+| **Идеальный (OPT)** | **749** | 254 | **74.9%** |
+
+| **LFU** | **507** | 493 | **50.7%** |
 
 ## The guts
 Последнее обновление заключает в себе оптимизацию идеального кэша. Как показали тесты, кэш не выдерживает конкуренции с кэшами моих комрадов, по этой причине, были выдвинуты следующие оптимизации.
@@ -108,16 +109,17 @@ size_t  optimal_page()
 	return hits;
 }
 ```
-## Used Literature and Articles
+## Поддержка шаблонов или кэширование Depeche Mode
+В LFUCache была добавлена поддержка различных типов для кэширования любой информации. Чтобы проверить ее работоспособность, в качестве теста была выбрана песня Depeche Mode -- Barrel Of a Gun из альбома Ultra 1997 года. Как показал результат работы кэша, он смог эффективно подгрузить 6 строк из песни.
 
+# Used Literature and Articles
 https://stackoverflow.com/questions/55451825/why-is-vector-faster-than-unordered-map
-
 https://stackoverflow.com/questions/8277050/optimizing-stdvector-operator-vector-access-when-it-becomes-a-bottlenec
-
 https://www.geeksforgeeks.org/cpp/complexity-guarantees-of-the-standard-containers-cpp/
-
 https://julien.jorge.st/posts/en/effortless-performance-improvements-in-cpp-std-unordered_map/
-
 https://www.geeksforgeeks.org/dsa/optimal-page-replacement-algorithm/
-
 https://www.geeksforgeeks.org/dsa/least-frequently-used-lfu-cache-implementation/
+https://www.geeksforgeeks.org/cpp/forward-list-and-list-of-pairs-in-c-with-examples/
+
+
+
