@@ -13,14 +13,15 @@ class LFUCache
     private:
         struct Element
         {
-            data_t                   value;
-            size_t                   frequency;
-            std::list<int>::iterator iterator;
+            data_t                               value;
+            size_t                               frequency;
+            typename std::list<data_t>::iterator iterator;
         };
 
         size_t                                        capacity;
         size_t                                        min_frequency;
-        std::unordered_map<size_t, Element>           Cache;
+        std::list<std::pair<key_t, data_t>>           Data;
+        std::unordered_map<key_t, Element>            Cache;
         std::unordered_map<size_t, std::list<data_t>> FrequencyMap;
 
     public:
@@ -32,13 +33,15 @@ class LFUCache
 
         size_t driver(size_t data_amount)
         {
-            data_t element = 0;
+            data_t element; // No way to initialize all types (std::string element = 0 -- construction from null is not valid)
             size_t hits    = 0;
 
             for (size_t index = 0; index < data_amount; index++)
             {
+                // std::getline(std::cin, element);
                 std::cin >> element;
                 check_input("Invalid element input");
+                Data.emplace_back(element, element);
 
                 if (get(element))
                 {
@@ -54,6 +57,12 @@ class LFUCache
         }
 
     private:
+        data_t slow_get_page(key_t key)
+        {
+            auto iterator = Data.find(key);
+            return iterator->second.value;
+        }
+
         bool get(key_t key)
         {
             auto iterator = Cache.find(key);
@@ -120,7 +129,7 @@ class LFUCache
                 min_frequency++;
             }
 
-            size_t key_to_remove = FrequencyMap[min_frequency].back();
+            data_t key_to_remove = FrequencyMap[min_frequency].back();
             FrequencyMap[min_frequency].pop_back();
             Cache.erase(key_to_remove);
 

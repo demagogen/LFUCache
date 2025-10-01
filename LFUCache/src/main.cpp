@@ -81,7 +81,7 @@ int main()
     check_input("Invalid data amount input");
 
     LFUCache<std::string, std::string> Cache(cache_capacity);
-    // size_t hits = Cache.driver(data_amount);
+    size_t hits = Cache.driver(data_amount);
 
     std::cout << hits;
 }
