@@ -1,20 +1,10 @@
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
-#include "main.h"
 #include "LFU_cache.h"
+#include "utils.h"
+#include "driver.h"
 
-void check_input(std::string error_message)
-{
-    if (std::cin.fail())
-    {
-        std::cin.clear();
-        std::cout << error_message << std::endl;
-        exit(0);
-    }
-}
-
-// /*
 int main(int argc, char* argv[]) {
     std::ifstream input_file;
     std::ofstream output_file;
@@ -44,12 +34,13 @@ int main(int argc, char* argv[]) {
     size_t data_amount    = 0;
 
     std::cin >> cache_capacity;
-    check_input("Invalid cache capacity input");
+    if (!check_input("Invalid cache capacity input")) return -1;
     std::cin >> data_amount;
-    check_input("Invalid data amount input");
+    if (!check_input("Invalid data amount input")) return -1;
 
-    LFUCache<size_t, int> Cache(cache_capacity);
-    size_t hits = Cache.driver(data_amount);
+    Driver<size_t, int> CacheDriver(cache_capacity);
+    CacheDriver.cache_driver(data_amount);
+    size_t hits = CacheDriver.return_hits();
 
     std::cout << hits << std::endl;
 
@@ -67,22 +58,3 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-// */
-
-/*
-int main()
-{
-    size_t cache_capacity = 0;
-    size_t data_amount    = 0;
-
-    std::cin >> cache_capacity;
-    check_input("Invalid cache capacity input");
-    std::cin >> data_amount;
-    check_input("Invalid data amount input");
-
-    LFUCache<std::string, std::string> Cache(cache_capacity);
-    size_t hits = Cache.driver(data_amount);
-
-    std::cout << hits;
-}
-*/

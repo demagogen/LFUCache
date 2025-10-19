@@ -1,6 +1,8 @@
-CMakeFiles/IdealCache.dir/src/main.cpp.o: \
- /home/roko/desktop/projects/LFUCache/IdealCache/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/15.2.1/iostream \
+CMakeFiles/LFUCache.dir/src/utils.cpp.o: \
+ /home/roko/desktop/projects/LFUCache/LFUCache/src/utils.cpp \
+ /usr/include/stdc-predef.h \
+ /home/roko/desktop/projects/LFUCache/LFUCache/headers/utils.h \
+ /usr/include/c++/15.2.1/iostream \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -149,20 +151,4 @@ CMakeFiles/IdealCache.dir/src/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/locale_facets.tcc \
  /usr/include/c++/15.2.1/bits/basic_ios.tcc \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
- /usr/include/c++/15.2.1/bits/istream.tcc \
- /home/roko/desktop/projects/LFUCache/IdealCache/headers/utils.h \
- /home/roko/desktop/projects/LFUCache/IdealCache/headers/ideal_cache.h \
- /usr/include/c++/15.2.1/vector \
- /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/15.2.1/bits/stl_vector.h \
- /usr/include/c++/15.2.1/bits/stl_bvector.h \
- /usr/include/c++/15.2.1/bits/vector.tcc \
- /usr/include/c++/15.2.1/unordered_map \
- /usr/include/c++/15.2.1/bits/unordered_map.h \
- /usr/include/c++/15.2.1/bits/hashtable.h \
- /usr/include/c++/15.2.1/bits/hashtable_policy.h \
- /usr/include/c++/15.2.1/ext/aligned_buffer.h \
- /usr/include/c++/15.2.1/bits/enable_special_members.h \
- /usr/include/c++/15.2.1/bits/node_handle.h \
- /usr/include/c++/15.2.1/bits/erase_if.h \
- /home/roko/desktop/projects/LFUCache/IdealCache/headers/utils.h
+ /usr/include/c++/15.2.1/bits/istream.tcc

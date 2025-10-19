@@ -6,5 +6,5 @@ CXX_DEFINES = -DIS_LINUX
 
 CXX_INCLUDES = -I/home/roko/desktop/projects/LFUCache/IdealCache/headers
 
-CXX_FLAGS = -std=gnu++11
+CXX_FLAGS = -std=gnu++20
 

@@ -1,16 +1,6 @@
 #include <iostream>
+#include "utils.h"
 #include "ideal_cache.h"
-#include "main.h"
-
-void check_input(std::string error_message)
-{
-    if (std::cin.fail())
-    {
-        std::cin.clear();
-        std::cout << error_message << std::endl;
-        exit(0);
-    }
-}
 
 int main()
 {
@@ -18,9 +8,15 @@ int main()
     size_t data_amount = 0;
 
     std::cin >> cache_size;
-    check_input("Invalid cache size input");
+    if (!check_input("Invalid cache size input"))
+    {
+        return -1;
+    }
     std::cin >> data_amount;
-    check_input("Invalid data amount input");
+    if (!check_input("Invalid data amount input"))
+    {
+        return -1;
+    }
 
     IdealCache Cache(cache_size, data_amount);
     Cache.read_data();

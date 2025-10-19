@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <unordered_map>
-#include "main.h"
+#include "utils.h"
 
 class IdealCache
 {
@@ -140,7 +140,6 @@ class IdealCache
                     continue;
                 }
 
-                // That is not Belady cache algo way, but I found it cool
                 auto data_frequency_iterator = DataFrequency.find(data_element);
                 if (data_frequency_iterator->second == 1) continue;
 

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/roko/desktop/projects/LFUCache/LFUCache/src/main.cpp" "CMakeFiles/LFUCache.dir/src/main.cpp.o" "gcc" "CMakeFiles/LFUCache.dir/src/main.cpp.o.d"
+  "/home/roko/desktop/projects/LFUCache/LFUCache/src/utils.cpp" "CMakeFiles/LFUCache.dir/src/utils.cpp.o" "gcc" "CMakeFiles/LFUCache.dir/src/utils.cpp.o.d"
   "" "bin/LFUCache" "gcc" "CMakeFiles/LFUCache.dir/link.d"
   )
 

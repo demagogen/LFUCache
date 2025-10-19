@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/IdealCache.dir/link.d"
   "CMakeFiles/IdealCache.dir/src/main.cpp.o"
   "CMakeFiles/IdealCache.dir/src/main.cpp.o.d"
+  "CMakeFiles/IdealCache.dir/src/utils.cpp.o"
+  "CMakeFiles/IdealCache.dir/src/utils.cpp.o.d"
   "bin/IdealCache"
   "bin/IdealCache.pdb"
 )

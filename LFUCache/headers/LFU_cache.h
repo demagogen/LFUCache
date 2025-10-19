@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <iterator>
 #include <cstddef>
-#include "main.h"
+#include "utils.h"
 
 template<typename key_t, typename data_t>
 class LFUCache
@@ -19,48 +19,16 @@ class LFUCache
         };
 
         size_t                                        capacity;
-        size_t                                        min_frequency;
-        std::list<std::pair<key_t, data_t>>           Data;
+        size_t                                        min_frequency = 0;
         std::unordered_map<key_t, Element>            Cache;
         std::unordered_map<size_t, std::list<data_t>> FrequencyMap;
 
     public:
-        LFUCache(size_t capacity) : capacity(capacity)
-        {
-            LFUCache::capacity = capacity;
-            min_frequency      = 0;
-        }
+        LFUCache(size_t capacity) : capacity(capacity) {}
 
-        size_t driver(size_t data_amount)
-        {
-            data_t element; // No way to initialize all types (std::string element = 0 -- construction from null is not valid)
-            size_t hits    = 0;
-
-            for (size_t index = 0; index < data_amount; index++)
-            {
-                // std::getline(std::cin, element);
-                std::cin >> element;
-                check_input("Invalid element input");
-                Data.emplace_back(element, element);
-
-                if (get(element))
-                {
-                    hits++;
-                }
-                else
-                {
-                    put(element, element);
-                }
-            }
-
-            return hits;
-        }
-
-    private:
         data_t slow_get_page(key_t key)
         {
-            auto iterator = Data.find(key);
-            return iterator->second.value;
+            return key;
         }
 
         bool get(key_t key)

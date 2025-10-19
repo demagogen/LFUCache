@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LFUCache.dir/link.d"
   "CMakeFiles/LFUCache.dir/src/main.cpp.o"
   "CMakeFiles/LFUCache.dir/src/main.cpp.o.d"
+  "CMakeFiles/LFUCache.dir/src/utils.cpp.o"
+  "CMakeFiles/LFUCache.dir/src/utils.cpp.o.d"
   "bin/LFUCache"
   "bin/LFUCache.pdb"
 )
