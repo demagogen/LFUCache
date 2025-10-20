@@ -15,12 +15,12 @@ class Driver
     public:
         Driver(size_t cache_capacity) : Cache(cache_capacity) {}
 
-        size_t return_hits()
+        const size_t return_hits()
         {
             return hits;
         }
 
-        size_t return_slow_gets()
+        const size_t return_slow_gets()
         {
             return slow_gets;
         }
@@ -31,7 +31,8 @@ class Driver
             slow_gets = 0;
         }
 
-        void cache_driver(size_t data_amount)
+        template<typename function_t>
+        void cache_driver(size_t data_amount, function_t slow_get_page)
         {
             data_t element; // No way to initialize all types (std::string element = 0 -- construction from null is not valid)
 
@@ -47,8 +48,8 @@ class Driver
                 }
                 else
                 {
-                    Cache.put(element, element);
-                    data_t return_page = Cache.slow_get_page(element);
+                    Cache.put(element, slow_get_page);
+                    // data_t return_page = Cache.slow_get_page(element);
                 }
             }
         }

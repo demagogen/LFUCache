@@ -26,10 +26,10 @@ class LFUCache
     public:
         LFUCache(size_t capacity) : capacity(capacity) {}
 
-        data_t slow_get_page(key_t key)
-        {
-            return key;
-        }
+        // data_t slow_get_page(key_t key) // TODO make external
+        // {
+        //     return key;
+        // }
 
         bool get(key_t key)
         {
@@ -45,7 +45,8 @@ class LFUCache
             return true;
         }
 
-        void put(key_t key, data_t value)
+        template<typename function_t>
+        void put(key_t key, function_t slow_get_page)
         {
             auto iterator = Cache.find(key);
 
@@ -62,7 +63,7 @@ class LFUCache
 
             min_frequency = 1;
             FrequencyMap[min_frequency].push_front(key);
-            Cache.emplace(key, Element{value, 1, FrequencyMap[min_frequency].begin()});
+            Cache.emplace(key, Element{slow_get_page(key), 1, FrequencyMap[min_frequency].begin()});
         }
 
         void update_frequency(key_t key)

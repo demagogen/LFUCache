@@ -5,6 +5,11 @@
 #include "utils.h"
 #include "driver.h"
 
+int return_page(size_t key)
+{
+    return key;
+}
+
 int main(int argc, char* argv[]) {
     std::ifstream input_file;
     std::ofstream output_file;
@@ -39,7 +44,7 @@ int main(int argc, char* argv[]) {
     if (!check_input("Invalid data amount input")) return -1;
 
     Driver<size_t, int> CacheDriver(cache_capacity);
-    CacheDriver.cache_driver(data_amount);
+    CacheDriver.cache_driver(data_amount, return_page);
     size_t hits = CacheDriver.return_hits();
 
     std::cout << hits << std::endl;
