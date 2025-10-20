@@ -15,12 +15,12 @@ class Driver
     public:
         Driver(size_t cache_capacity) : Cache(cache_capacity) {}
 
-        const size_t return_hits()
+        size_t return_hits() const
         {
             return hits;
         }
 
-        const size_t return_slow_gets()
+        size_t return_slow_gets() const
         {
             return slow_gets;
         }

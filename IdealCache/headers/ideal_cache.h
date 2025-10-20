@@ -5,28 +5,25 @@
 #include <unordered_map>
 #include "utils.h"
 
+template<typename key_t, typename data_t>
 class IdealCache
 {
     private:
-        size_t                             capacity;
-        size_t                             data_amount;
-        std::vector<int>                   data;
-        std::unordered_map<size_t, size_t> DataFrequency;
-        std::unordered_map<size_t, int>    Cache;
+        size_t                            capacity;
+        size_t                            data_amount;
+        std::vector<data_t>               data;
+        std::unordered_map<key_t, size_t> DataFrequency;
+        std::unordered_map<key_t, data_t> Cache;
 
     public:
-        IdealCache(size_t capacity, size_t data_amount) :
-            capacity(capacity),
-            data_amount(data_amount)
+        IdealCache(size_t capacity, size_t data_amount) : capacity(capacity), data_amount(data_amount)
         {
             IdealCache::capacity    = capacity;
             IdealCache::data_amount = data_amount;
             data.reserve(data_amount);
         }
 
-        ~IdealCache() {}
-
-        const void vector_dump()
+        void vector_dump() const
         {
             for (size_t index = 0; index < data.size(); index++)
             {
@@ -36,7 +33,7 @@ class IdealCache
             std::cout << std::endl;
         }
 
-        const void cache_dump()
+        void cache_dump() const
         {
             for (const auto& cache_iterator : Cache)
             {
@@ -46,7 +43,7 @@ class IdealCache
             std::cout << std::endl;
         }
 
-        const void data_frequency_dump()
+        void data_frequency_dump() const
         {
             for (const auto& data_frequency_iterator : DataFrequency)
             {
@@ -78,12 +75,12 @@ class IdealCache
             }
         }
 
-        void push_back(int element)
+        void push_back(data_t element)
         {
             data.push_back(element);
         }
 
-        bool search(size_t key)
+        bool search(key_t key) const
         {
             auto cache_iterator = Cache.find(key);
             if (cache_iterator != Cache.end()) return true;
@@ -133,7 +130,6 @@ class IdealCache
             for (size_t index = 0; index < data_amount; index++)
             {
                 int data_element = data[index];
-                // cache_dump();
                 if (search(data_element))
                 {
                     hits++;

@@ -18,7 +18,7 @@ int main()
         return -1;
     }
 
-    IdealCache Cache(cache_size, data_amount);
+    IdealCache<size_t, int> Cache(cache_size, data_amount);
     Cache.read_data();
     size_t hits = Cache.optimal_page();
     std::cout << hits << std::endl;

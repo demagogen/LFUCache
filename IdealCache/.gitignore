@@ -3,3 +3,6 @@ bin/
 perf.data
 perf.data.old
 CMakeCache.txt
+DartConfiguration.tcl
+Makefile
+CMakeFiles/
